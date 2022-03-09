@@ -83,3 +83,8 @@ ul, form {
 .todo:hover {
   cursor: pointer;
 }
+
+.todoList {
+  padding: 2%;
+  cursor: pointer;
+}
