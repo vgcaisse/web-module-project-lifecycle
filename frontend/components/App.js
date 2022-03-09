@@ -42,14 +42,14 @@ export default class App extends React.Component {
     axios.post(URL, newTodo)
       .then(res=> {
         this.setState({
-          todos: [ ...todos, res.data.data.name],
+          todos: [ ...todos, res.data.data],
         })
       })
   }
 
   toggleCompleted = (id) => {
     console.log(id)
-    axios.patch(`http://localhost:9000/api/todos/:id`)
+    axios.patch(`http://localhost:9000/api/todos/${id}`)
       .then(res=> {
         this.setState({ 
           ...this.state, 
@@ -68,9 +68,9 @@ export default class App extends React.Component {
     
   }
 
-  clearCompleted = () => {
+  clearCompleted = (id) => {
     // console.log(id)
-    axios.patch(`http://localhost:9000/api/todos/:id`)
+    axios.patch(`http://localhost:9000/api/todos/${id}`)
       .then(res=> {
         this.setState({ 
           ...this.state, 
